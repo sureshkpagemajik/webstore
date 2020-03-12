@@ -7,7 +7,7 @@
     
     
     
-    <wb-module deploy-name="webstorequote">
+    <wb-module deploy-name="quote">
                                                                         
         
         
@@ -52,16 +52,8 @@
         
         
         
-        <property name="java-output-path" value="/webstorequote/target/classes"/>
-                                                                        
-        
-        
-        
-        
-        
-        
-        
-        <property name="context-root" value="webstorequote"/>
+        <property name="java-output-path" value="/quote/target/classes"/>
+        <property name="context-root" value="quote"/>
                                                                     
     
     

@@ -4,7 +4,7 @@
     
     
     
-    <wb-module deploy-name="webstoreorder">
+    <wb-module deploy-name="order">
                                                 
         
         
@@ -34,12 +34,8 @@
         
         
         
-        <property name="java-output-path" value="/webstoreorder/target/classes"/>
-                                        
-        
-        
-        
-        <property name="context-root" value="webstoreorder"/>
+        <property name="java-output-path" value="/order/target/classes"/>
+        <property name="context-root" value="order"/>
                                             
     
     

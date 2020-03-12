@@ -2,7 +2,7 @@
                 
     
     
-    <wb-module deploy-name="webstoreproducts">
+    <wb-module deploy-name="products">
                                 
         
         
@@ -22,11 +22,8 @@
                                 
         
         
-        <property name="java-output-path" value="/webstoreproducts/target/classes"/>
-                                
-        
-        
-        <property name="context-root" value="webstoreproducts"/>
+        <property name="java-output-path" value="/products/target/classes"/>
+        <property name="context-root" value="products"/>
                             
     
     
