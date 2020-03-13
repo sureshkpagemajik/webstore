@@ -16,5 +16,6 @@
         <module>Modules/WebStoreCore</module>
         <module>Modules/WebStoreCheckout</module>
         <module>webstore</module>
+		<module>gateway</module>
     </modules>
 </project>
