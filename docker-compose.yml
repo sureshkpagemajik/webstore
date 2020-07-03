@@ -2,7 +2,7 @@ version: '3'
 services:
     webstore:
         build:
-            context: webstore
+            context: Modules\webstore\
         container_name: webstore
         ports:
         - "8070:8080"
@@ -16,7 +16,7 @@ services:
         - payment
     customer:
         build:
-            context: Modules\WebStoreCustomers\
+            context: Modules\customers\
         container_name: customer 
         networks:
         - testnet
@@ -24,13 +24,13 @@ services:
         - webstoredb 
     gateway:
         build:
-            context: gateway\
+            context: Modules\gateway\
         container_name: gateway 
         networks:
         - testnet
     order:
         build:
-            context: Modules\WebStoreCheckout\Order\
+            context: Modules\order\
         container_name: order 
         networks:
         - testnet
@@ -38,7 +38,7 @@ services:
         - webstoredb 
     payment:
         build:
-            context: Modules\WebStoreCheckout\Payment\
+            context: Modules\payment\
         container_name: payment 
         networks:
         - testnet
@@ -46,7 +46,7 @@ services:
         - gateway 
     product:
         build:
-            context: Modules\WebStoreProducts\
+            context: Modules\products\
         container_name: product 
         networks:
         - testnet
@@ -54,7 +54,7 @@ services:
         - webstoredb 
     quote:
         build:
-            context: Modules\WebStoreCheckout\Quote\
+            context: Modules\quote\
         container_name: quote 
         networks:
         - testnet
@@ -65,7 +65,7 @@ services:
         restart: always
         container_name: webstoredb 
         volumes:
-        - ./mysqlDocker:/docker-entrypoint-initdb.d
+        - ./Modules/mysqldb:/docker-entrypoint-initdb.d
         environment:
             MYSQL_ROOT_PASSWORD: root
             MYSQL_DATABASE: root
