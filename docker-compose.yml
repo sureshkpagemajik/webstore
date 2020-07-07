@@ -1,6 +1,7 @@
 version: '3'
 services:
     webstore:
+        image: egapm/microsvcapp:webstore
         build:
             context: Modules\webstore\
         container_name: webstore
@@ -15,6 +16,7 @@ services:
         - quote
         - payment
     customer:
+        image: egapm/microsvcapp:customers
         build:
             context: Modules\customers\
         container_name: customer 
@@ -23,12 +25,14 @@ services:
         depends_on:
         - webstoredb 
     gateway:
+        image: egapm/microsvcapp:gateway
         build:
             context: Modules\gateway\
         container_name: gateway 
         networks:
         - testnet
     order:
+        image: egapm/microsvcapp:order
         build:
             context: Modules\order\
         container_name: order 
@@ -37,6 +41,7 @@ services:
         depends_on:
         - webstoredb 
     payment:
+        image: egapm/microsvcapp:payment
         build:
             context: Modules\payment\
         container_name: payment 
@@ -45,6 +50,7 @@ services:
         depends_on:
         - gateway 
     product:
+        image: egapm/microsvcapp:product
         build:
             context: Modules\products\
         container_name: product 
@@ -53,6 +59,7 @@ services:
         depends_on:
         - webstoredb 
     quote:
+        image: egapm/microsvcapp:quote
         build:
             context: Modules\quote\
         container_name: quote 
@@ -74,3 +81,4 @@ services:
 
 networks:
   testnet:
+
