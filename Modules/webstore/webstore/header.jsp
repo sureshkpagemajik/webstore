@@ -109,10 +109,10 @@
 									<li class="dropdown-submenu">
 										<a href="home.jsp?cat=26">Web/Servlet Container</a>
 										<ul class="dropdown-menu">
-											<li><a href="connectionPool.jsp">Connection Pool (DataSource) Exhaustion</a></li>
+											<!--<li><a href="connectionPool.jsp">Connection Pool (DataSource) Exhaustion</a></li>
 											<li><a href="threadpoollow.jsp">Thread Pool Exhaustion</a></li>
 											<li><a href="ejbpoollow.jsp">EJB Pool Exhaustion</a></li>
-											<li><a href="jmsQueue.jsp">JMS queue is clogged</a></li>
+											<li><a href="jmsQueue.jsp">JMS queue is clogged</a></li>-->
 											<li><a href="servletprocessing.jsp">Servlet Processing Issues</a></li>
 										</ul>
 									</li>
