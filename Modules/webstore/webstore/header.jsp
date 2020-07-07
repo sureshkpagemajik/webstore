@@ -81,7 +81,7 @@
 										<ul class="dropdown-menu">
 											<li><a href="syncajax.jsp">Synchronous Ajax</a></li>
 											<li><a href="manyajax.jsp">Fast & Parallel Ajax</a></li>
-											<li><a href="uncachedajax.jsp">Un Cached Ajax</a></li>
+											<!--<li><a href="uncachedajax.jsp">Un Cached Ajax</a></li>-->
 											<li><a href="heavycontentajax.jsp">Heavy Response Content</a></li>
 										</ul>
 									</li>
@@ -102,7 +102,7 @@
 									<li class="dropdown-submenu">
 										<a href="home.jsp?cat=26">SQL</a>
 										<ul class="dropdown-menu">
-											<li><a href="excessiveSql.jsp">Excessive SQL (N+1 anti-pattern)</a></li>
+											<!--<li><a href="excessiveSql.jsp">Excessive SQL (N+1 anti-pattern)</a></li>-->
 											<li><a href="tablelock.jsp">Table Lock</a></li>
 										</ul>
 									</li>
