@@ -1,7 +1,20 @@
+Pre-requisites  - 
+
+  Make sure you have JAVA 8 or JRE 8 installed.
+  Make sure you have maven installed.
+  Make sure you have git installed 
+  Make sure you have docker-compose installed.
+
+To clone this application Run - "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
+
+Run "cd MicroSvcApp"
+
 Run "mvn clean package" in the Webstore-Microservice-DockerCompose Directory. This will build all the required war and jar files to run Webstore.
 
-This Project Works with windows and Linux based machines. The docker-compose file is built for windows based machines out-the-box, 
+This Project Works with windows and Linux based machines.
 
-To run it in linux machines replace the '\' in build-context to '/' in docker-compose.yml file. 
+Run "docker-compose up -d" This command will create the necessary images to run all the microservices applciations, create the docker containers. 
 
-Run "docker-compose up" to run the webstore and access it through 8070 port.
+To ensure all containers started  Run "docker ps -a"
+
+Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
