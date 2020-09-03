@@ -7,13 +7,17 @@
   <li>Make sure you have docker-compose installed.</li>
 </ul>
 <b><u>Step 1 :</u></b> To clone this application
-run "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
-
-<b><u>Step 2 :</u></b> Run "cd MicroSvcApp"
-
-<b><u>Step 3 :</u></b> Run "mvn clean package" in the Webstore-Microservice-DockerCompose Directory. This will build all the required war and jar files to run Webstore.
-
-This Project Works with windows and Linux based machines.
+```
+git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git
+```
+<b><u>Step 2 :</u></b> Navigate to application home directory 
+```
+cd MicroSvcApp
+```
+<b><u>Step 3 :</u></b> To build the application 
+```
+mvn clean package
+```
 
 <h2>To start containers without BTM enabled</h2>
 
