@@ -6,7 +6,8 @@
   <li>Make sure you have git installed.</li>
   <li>Make sure you have docker-compose installed.</li>
 </ul>
-<b><u>Step 1 :</u></b> To clone this application Run - "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
+<b><u>Step 1 :</u></b> To clone this application
+run "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
 
 <b><u>Step 2 :</u></b> Run "cd MicroSvcApp"
 
