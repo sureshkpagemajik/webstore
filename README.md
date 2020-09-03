@@ -1,9 +1,9 @@
-Pre-requisites  - 
+Pre-requisites  - <br>
 
-  Make sure you have JAVA 8 or JRE 8 installed.
-  Make sure you have maven installed.
-  Make sure you have git installed 
-  Make sure you have docker-compose installed.
+  Make sure you have JAVA 8 or JRE 8 installed.<br>
+  Make sure you have maven installed.<br>
+  Make sure you have git installed.<br>
+  Make sure you have docker-compose installed.<br>
 
 To clone this application Run - "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
 
