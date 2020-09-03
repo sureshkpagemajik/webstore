@@ -1,3 +1,4 @@
+
 <h2>Pre-requisites</h2> 
 <ul>
   <li>Make sure you have JAVA 8 or JRE 8 installed.</li>
@@ -26,7 +27,7 @@ Open the browser and access the application using "http://DOCKER_HOST_IP:8070/we
 
 <h2>To start with BTM enabled </h2>
 
-<b><u>Step 1 :</u></b> Install the eG agent on the docker host machine "Copy the command from eG Manager to install agent".
+<b><u>Step 1 :</u></b> Install the agent on the docker host machine "Copy the command from Manager to install agent".
 
 <b><u>Step 2 :</u></b> Navigate to directory "MicroSvcApp/btm_volume_mount/" 
 
@@ -35,4 +36,7 @@ Open the browser and access the application using "http://DOCKER_HOST_IP:8070/we
 To ensure all containers started  Run "docker ps -a"
 
 Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
+
+
+<h2>THIS IS FOR THE PURPOSES OF TRAINING OR INTERNAL USE ONLY, DO NOT SHARE TO CUSTOMER/PROSPECT/OTHERS</h2> 
 
