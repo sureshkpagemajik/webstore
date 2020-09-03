@@ -1,36 +1,36 @@
-Pre-requisites  - <br>
+<h2>Pre-requisites</h2> <br>
+<ul>
+  <li>Make sure you have JAVA 8 or JRE 8 installed.</li>
+  <li>Make sure you have maven installed.</li>
+  <li>Make sure you have git installed.</li>
+  <li>Make sure you have docker-compose installed.</li>
+</ul>
+<b>Step 1:</b> To clone this application Run - "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
 
-  Make sure you have JAVA 8 or JRE 8 installed.<br>
-  Make sure you have maven installed.<br>
-  Make sure you have git installed.<br>
-  Make sure you have docker-compose installed.<br>
+<b>Step 2:</b> Run "cd MicroSvcApp"
 
-Step 1: To clone this application Run - "git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git"
-
-Step 2: Run "cd MicroSvcApp"
-
-Step 3: Run "mvn clean package" in the Webstore-Microservice-DockerCompose Directory. This will build all the required war and jar files to run Webstore.
+<b>Step 3:</b> Run "mvn clean package" in the Webstore-Microservice-DockerCompose Directory. This will build all the required war and jar files to run Webstore.
 
 This Project Works with windows and Linux based machines.
 
-To start containers without BTM enabled
+<h2>To start containers without BTM enabled</h2>
 
-Step 1: Navigate to directory "MicroSvcApp/"  
+<b>Step 1:</b> Navigate to directory "MicroSvcApp/"  
 
-Step 2: Run "docker-compose up -d" This command will create the necessary images to run all the microservices applciations, create the docker containers. 
+<b>Step 2:</b> Run "docker-compose up -d" This command will create the necessary images to run all the microservices applciations, create the docker containers. 
 
 To ensure all containers started  Run "docker ps -a"
 
 Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 
-To start with BTM enabled 
+<h2>To start with BTM enabled </h2>
 
-Step 1: Install the eG agent on the docker host machine "Copy the command from eG Manager to install agent".
+<b>Step 1:</b> Install the eG agent on the docker host machine "Copy the command from eG Manager to install agent".
 
-Step 2: Navigate to directory "MicroSvcApp/btm_volume_mount/" 
+<b>Step 2:</b> Navigate to directory "MicroSvcApp/btm_volume_mount/" 
 
-Step 3: Step 2: Run "docker-compose up -d" This command will create the necessary images to run all the microservices applciations, create the docker containers.
+<b>Step 3:</b> Step 2: Run "docker-compose up -d" This command will create the necessary images to run all the microservices applciations, create the docker containers.
 
 To ensure all containers started  Run "docker ps -a"
 
