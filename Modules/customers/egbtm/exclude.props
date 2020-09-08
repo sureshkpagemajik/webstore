@@ -1,0 +1,136 @@
+#####################################################################
+# It is possible to disable Bytecode Instrumentation for Fully   
+# Qualified Class Names by specifing them into exclude.class list.
+#####################################################################
+# 
+exclude.class=org/apache/catalina/startup/Bootstrap|net/sourceforge/jtds/jdbc/ProcEntry|org/apache/activemq/ActiveMQMessageProducerSupport|oracle/jdbc/driver/OracleDriver|org/jboss/jms/client/delegate/ClientClusteredConnectionFactoryDelegate
+#
+#####################################################################
+# It is possible to disable Bytecode Instrumentation for packages
+# or sub-packages by specifiying them in exclude.package list.
+#####################################################################
+# 
+exclude.package.STARTSWITH=sun/*|com/sun/jmx/remote/*|org/slf4j/*|com/eg/jtm/*|com/eg/jvmmonitor/*|com/eg/agent/*|com/eg/ch/*|com/eg/org/*|org/apache/catalina/*|org/apache/naming/*|org/apache/tomcat/util/*|org/apache/commons/dbcp/Delegating/*|org/apache/coyote/*|org/apache/log4j/*|org/apache/juli/*|ognl/*|org/springframework/web/servlet/view/*|org/springframework/transaction/*|org/springframework/aop/*|org/springframework/validation/*|org/springframework/core/*|org/springframework/format/*|org/jboss/logmanager/*|ch/qos/logback/*|org/slf4j/*|weblogic/*|com/bea/*|com/weblogic/*|org/eclipse/*|javax/*|java/*|org/apache/felix/*|com/sun/enterprise/*|org/glassfish/*|org/jvnet/*|org/aspectj/*|com/ibm/ws/naming/*|com/ibm/ws/rsadapter/*|com/ibm/ejs/j2c/*|redis/clients/*|com/mongodb/*|org/mule/*|jdk/internal/reflect/*|org/springframework/boot/loader/*|jdk/vm/*|com/fasterxml/*|org/hibernate/*|org/xnio/*|org/infinispan/*|org/wildfly/*|org/omg/CORBA/*|org/apache/xerces/*|org/jboss/*|org/springframework/beans/*|org/springframework/utils/*|com/hazelcast/*|com/sun/common/util/logging/*|fish/payara/*
+# 
+#####################################################################
+# It is possible to disable Bytecode Instrumentation for POJO Methods by
+# specifiying its package and subpackage names in exclude.pojo list.
+#####################################################################
+# 
+exclude.pojo=java/*|javax/*|sun/*|com/sun/*|net/sourceforge/jtds/*|org/eclipse/jdt/*|org/apache/jasper/servlet/*|org/apache/juli/*|org/apache/catalina/*|org/apache/tomcat/util/*|org/apache/naming/*|org/zefer/html/*|com/opensymphony/xwork2/*|com/microsoft/sqlserver/jdbc/*|com/mysql/jdbc/*|org/apache/commons/beanutils/*|org/springframework/*|org/apache/*|org/hibernate/*|antlr/*|org/jboss/modules/*|org/jboss/*|com/ibm/*|org/eclipse/osgi/*|com/bea/*|org/aspectj/weaver/*|weblogic/servlet/internal/*|oracle/*|javassist/*|org/mariadb/jdbc/*|org/postgresql/*
+# 
+#####################################################################
+# It is possible to disable Bytecode Instrumentation for patterns by
+# specifiying the patterns in exclude.package.CONTAINS list. The pattern must
+# starts with "*/" and ends with "/*" as shown below. The classes/packages
+# or sub-packages under the given pattern are excluded from the Bytecode Instumentation.
+#####################################################################
+# 
+exclude.package.CONTAINS=*/oracle/*|*/org/objectweb/asm/*
+# 
+#####################################################################
+# 
+lazy.retransform.packages=
+# 
+#####################################################################
+# It is possible to enable Bytecode Instrumentation for a specific sub 
+# packages by specifying the sub packages names in include.package list   
+# even its super packages are available in exclude.package.STARTSWITH\
+# exclude.pojo or exclude.package.CONTAINS lists.
+#####################################################################
+# 
+include.package=com/sap/mw/jco/*|org/eclipse/jetty/server/*|org/mule/processor/*|org/mule/transport/*|org/apache/ibatis/executor/statement/*
+# 
+#####################################################################
+# It is possible to enable Bytecode Instrumentation for Fully   
+# Qualified Class Names by specifying the class names in include.class  
+# list as shown below even its super packages or classes are available
+# in exclude.package.STARTSWITH\exclude.pojo\exclude.package.CONTAINS
+# or exclude.class lists.
+#####################################################################
+# 
+include.class=java/lang/Runtime|java/lang/ProcessImpl|java/lang/ProcessBuilder|java/lang/Thread|org/apache/catalina/servlets/DefaultServlet|weblogic/net/http/HttpURLConnection|org/apache/http/impl/client/CloseableHttpClient|org/apache/commons/httpclient/HttpMethodDirector|sun/rmi/transport/StreamRemoteCall|javax/mail/Transport|com/sun/jndi/ldap/LdapClient|com/sun/jndi/ldap/LdapClientFactory|com/sun/jndi/ldap/LdapNamingEnumeration|javax/naming/directory/InitialDirContext|weblogic/rmi/internal/BasicRemoteRef|weblogic/rmi/internal/activation/ActivatableRemoteRef|org/apache/catalina/connector/Response|org/eclipse/jetty/servlet/DefaultServlet|weblogic/servlet/JSPServlet|weblogic/wsee/server/servlet/BaseWSServlet|weblogic/servlet/internal/ServletResponseImpl|javax/faces/webapp/FacesServlet|oracle/jdbc/driver/ClosedConnection|oracle/jdbc/driver/LogicalConnection|oracle/jdbc/driver/OracleCallableStatement|oracle/jdbc/driver/OracleCallableStatementWrapper|oracle/jdbc/driver/OracleClosedStatement|oracle/jdbc/driver/OracleConnection|oracle/jdbc/driver/OracleOCIConnection|oracle/jdbc/driver/OraclePreparedStatement|oracle/jdbc/driver/OraclePreparedStatementWrapper|oracle/jdbc/driver/PhysicalConnection|oracle/jdbc/driver/T2CCallableStatement|oracle/jdbc/driver/T2CConnection|oracle/jdbc/driver/T2CPreparedStatement|oracle/jdbc/driver/T2CStatement|oracle/jdbc/driver/T4CCallableStatement|oracle/jdbc/driver/T4CConnection|oracle/jdbc/driver/T4CPreparedStatement|oracle/jdbc/driver/T4CStatement|oracle/jdbc/driver/OracleStatement|redis/clients/jedis/Connection|com/mongodb/DBCollection|org/mule/transport/AbstractTransportMessageProcessTemplate|org/apache/activemq/transport/tcp/TcpTransport|java/io/PrintWriter|java/io/OutputStream|org/apache/catalina/connector/CoyoteWriter|org/apache/catalina/connector/CoyoteOutputStream|org/apache/catalina/core/ApplicationDispatcher|javax/servlet/ServletOutputStream|org/glassfish/jersey/servlet/ServletContainer|org/springframework/ws/transport/http/MessageDispatcherServlet|weblogic/wsee/jaxws/JAXWSWebAppServlet|weblogic/wsee/jaxws/JAXWSServlet|weblogic/servlet/http/AbstractAsyncServlet
+#
+#####################################################################
+#
+# Special JDBC Driver(s)
+# =======================
+#
+jdbc.driver.STARTSWITH=com/ibm/db2/jcc/|org/postgresql/|com/mchange/v2/c3p0/|com/ibm/as400/access/
+#
+#####################################################################
+#                        IC for APM Configuration 
+# It captures two data in the transaction flow. 1] Username 2] Business Context
+#####################################################################
+# 
+#  General Format :
+#  ===============
+#
+#  IC_IDS=<<MeasureID-1>>~|~<<MeasureID-2>>~|~<<MeasureID-3>>~|~......~|~<<MeasureID-N>>
+#  IC_<<MeasureID>>=<<Entry Description>>~|~<<Field Type>>~|~<<Fetch Type>>~|~<<Fully Qualified Class Name>>~|~<<Method Name>>~|~<<Method Signature>>~|~<<Method Argument Index>>~|~<<Fetch Once>>~|~<<Pass HttpServletRequest Object>>~|~<<Execute at begining of the Transaction>>~|~<<Session Attribute (or) Request Parameter Name>>~|~<<Matching URL Pattern>>
+#
+#==============================================================================
+# Field Names     Type 1          Type 2          Type     3      Type 4 
+#==============================================================================
+# Entry
+# Description     Description     Description     Description     Description
+#==============================================================================
+# Field Type      1 (or) 2        1 (or) 2        1 (or) 2        1 (or) 2
+#==============================================================================
+# Fetch Type      1               2               3               4
+#==============================================================================
+# Fully 
+# Qualified       Required        Required        (-)             (-)
+# Class 
+# Name
+#==============================================================================
+# Method          Required(^)     Required(*)     (-)             (-)
+# Name
+#==============================================================================
+# Method          Required        (-)             (-)             (-)
+# Signature
+#==============================================================================
+# Method
+# Argument        Required        (-)             (-)             (-)
+# Index
+#==============================================================================
+# Fetch Once      T/F             T/F             T/F             T/F
+#==============================================================================
+# Pass 
+# HttpServlet
+# Request         F               T/F             F(+)            F(+)
+# Object
+#==============================================================================
+# Execute at 
+# begining of 
+# the             F               T/F             T/F             F
+# Transaction
+#==============================================================================
+# Session 
+# Attribute 
+# (or)            (-)             (-)             Required        Required
+# Request                                         (Session        (Request
+# Parameter                                       Attrubute)      Parameter)
+# Name
+#==============================================================================
+# Matching 
+# URL             Required         Required       Required        Required
+# Pattern
+#==============================================================================
+#
+#   Note:
+#   =====
+#   (^) Either static or non-static methods are considered
+#   (+) By default, HttpServletRequest Object is considered
+#   (*) No Argument static methods only considered. But when “Pass Request Object” is true, 
+#    static method which has an “Object” (HttpServletRequest Object) argument is considered
+#
+#   Examples
+#   ========
+#               IC_IDS=1~|~2~|~3~|~4
+#   Type 1:     IC_1=MethodParams~|~1~|~1~|~com/egi/poc/UserName~|~isValidUser~|~null~|~1~|~true~|~false~|~true~|~null~|~*/WebPoc*
+#   Type 2:     IC_2=StaticMethod~|~1~|~2~|~com/egi/poc/UserName~|~setUser~|~null~|~-1~|~true~|~true~|~false~|~null~|~*Web*
+#   Type 3:     IC_3=SessionEnd~|~2~|~3~|~null~|~null~|~null~|~-1~|~false~|~false~|~false~|~username~|~*
+#   Type 4:     IC_4=RequestParam~|~1~|~4~|~null~|~null~|~null~|~null~|~-1~|~null~|~null~|~username~|~*/LoginServlet*
+#
+#############################################################################################################################

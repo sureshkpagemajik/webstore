@@ -1,0 +1,40 @@
+#############################################################################################################################
+#                                                   (CPC) - Custom Pattern Configuration
+#############################################################################################################################
+# ====================================================
+# Format & Description of each configuration elements
+# ====================================================
+#
+# CPC<<INDEX>>[#B/#KB]=<<MATCHING_URL_PATTERN>>~#~<<DESCRIPTION>>~!~HP[_REGEX]/US=<<QUERY_PARAM_KEY/URL_SEGMENT_INDEX>>~|~HP[_REGEX]/US=<<QUERY_PARAM_KEY/URL_SEGMENT_INDEX>>....
+#
+#             CPC<<INDEX>>              :   Custom Pattern Configuration Index 
+#             [#B/#KB]                  :   Indicates that this pattern configuration is applied for BusinessTransTest or KeyBusinessTransTest, 
+#                                              this is optional if not specified BusinessTransTest will be considered
+#             <<MATCHING_URL_PATTERN>>  :   Apply the config only for matching URL patterns alone
+#             <<DESCRIPTION>>           :   Description for the configuration
+#             HP[_REGEX]                :   Indicates the value to be fetched dynamically from the Http Param, Regex is optional.
+#                                              if Regex is present,it will be applied on Http param value part.
+#             US                        :   Indicates the value to be fetched from URL Segment
+#             <<QUERY_PARAM_KEY>>       :   Specific Key of the Query Param for which the value need to be captured
+#             <<URL_SEGMENT_INDEX>>     :   Index position of the URL Segment - starts from 1, domain name and port will be ignored for URL Segment
+#
+#             NOTE :
+#             =====
+#                    1. HP/US related configurations can be specified more than once to capture more number of values. 
+#                    2. Also the same query param can be specified more than once to capture different portions from the same value using regex.
+#                    3. The user need to input Regex. pattern (Java API based) to be applied on the query param value part.
+#
+#
+#             Example Configurations
+#             ======================
+#
+#             CPC1#B=*/webstore/home.jsp~#~Home-Page~!~US=1~|~HP=type~|~HP=brand~|~HP=color~|~HP=size
+#             CPC2#KB=*/addtocart*~#~AddToCart~!~HP=size~|~HP_some_xyz_some_abc_([a-zA-z]+)=brand~|~HP=color~|~HP_([a-zA-z]+)_=type~|~HP__([a-zA-z]+)=type~|~US=2
+#             CPC3=*/removecart*~#~RemoveItem~!~US=3~|~HP=itemCode~|~HP=product~|~HP=type
+#             CPC4=*~#~Catch_All~!~US=1~|~US=2~|~US=3
+#
+#############################################################################################################################
+
+
+
+

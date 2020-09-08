@@ -1,0 +1,91 @@
+############################################################
+#            BTM Logging Configuration File                
+############################################################
+# 
+# eG BTM Uses its own log file. Please note that any changes made
+# in the files do not require restarting the application 
+#
+############################################################
+#               BTM Log Level Specification                     
+############################################################
+#
+# Users can specify the following log leves -  ALL, TRACE, DEBUG, INFO, WARN, ERROR, OFF
+# By default, it is WARN
+#
+LOG_LEVEL=WARN
+#
+############################################################
+#               Maximum count of Log files                  
+############################################################
+#
+# Users can specify the max.no.of log files to be maintained
+# By default, it is 5
+# 
+LOG_FILE_COUNT=5
+#
+############################################################
+#                    Log file size                       
+############################################################
+#
+# Users can specify the size of log files in MB
+# By default, it is 2
+# 
+LOG_FILE_SIZE=2
+#
+############################################################
+#                 Name of the Log file                      
+############################################################
+#
+# Users can specify the name of the log file to be created. 
+# Note that log files are always created in "%BTM_HOME%/log" Folder and default name is "BTMLog.log"
+# 
+LOG_FILE_NAME=BTMLog.log
+#
+############################################################
+#
+#
+############################################################
+#               BTM Debug Log Level Specification                     
+############################################################
+#
+# Users can specify the following log leves -  ALL, TRACE, DEBUG, INFO, WARN, ERROR, OFF
+# By default, it is WARN
+#
+DEBUG_LOG_LEVEL=INFO
+#
+############################################################
+#               Maximum count of Log files                  
+############################################################
+#
+# Users can specify the max.no.of log files to be maintained
+# By default, it is 5
+# 
+DEBUG_LOG_FILE_COUNT=5
+#
+############################################################
+#                    Log file size                       
+############################################################
+#
+# Users can specify the size of log files in MB
+# By default, it is 5
+# 
+DEBUG_LOG_FILE_SIZE=10
+#
+############################################################
+#                 Appender Queue Size                      
+############################################################
+#
+# Users can specify Async appender queue size
+# By default, it is 500
+#
+QUEUE_SIZE=500
+#
+############################################################
+#                 Appender Discarding Threshold        
+############################################################
+# Users can specify async appender discarding threshold value
+# By default, it is 0
+#
+DISCARDING_THRESHOLD=0
+#
+############################################################

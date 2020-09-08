@@ -10,7 +10,7 @@ services:
         networks:
         - testnet
         environment:
-        - JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
+        #- JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
         volumes:
         - /opt/egbtm:/opt/egbtm
         depends_on:
@@ -23,11 +23,11 @@ services:
         image: egapm/microsvcapp:customers
         build:
             context: ../Modules/customers/
-        container_name: customer 
+        container_name: customer
         networks:
         - testnet
         environment:
-        - JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
+        #- JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
         volumes:
         - /opt/egbtm:/opt/egbtm
         depends_on:
@@ -47,7 +47,7 @@ services:
         networks:
         - testnet
         environment:
-        - JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
+        #- JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
         volumes:
         - /opt/egbtm:/opt/egbtm
         depends_on:
@@ -60,7 +60,7 @@ services:
         networks:
         - testnet
         environment:
-        - JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
+        #- JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
         volumes:
         - /opt/egbtm:/opt/egbtm
         depends_on:
@@ -73,7 +73,7 @@ services:
         networks:
         - testnet
         environment:
-        - JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
+        #- JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
         volumes:
         - /opt/egbtm:/opt/egbtm
         depends_on:
@@ -86,7 +86,7 @@ services:
         networks:
         - testnet
         environment:
-        - JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
+        #- JAVA_OPTS="-javaagent:/opt/egbtm/eg_btm.jar"
         volumes:
         - /opt/egbtm:/opt/egbtm
         depends_on:
