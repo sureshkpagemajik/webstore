@@ -43,6 +43,13 @@ Open the browser and access the application using "http://DOCKER_HOST_IP:8070/we
 
 To ensure all containers started  Run "docker ps -a"
 
+2Methods:
+step 1: chmod +777 copyegbtm.*
+step 2: sh copyegbtm.sh 
+step 3: run docker-compose -f btm_volume_mount/docker-compose.yaml  up -d or 
+        run docker-compose -f btm_volume_mount/docker-compose.yaml  up -d
+    
+
 Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 
