@@ -3,7 +3,7 @@ services:
     webstore:
         image: egapm/microsvcapp:webstore
         build:
-            context: ..\Modules\webstore\
+            context: ../Modules/webstore/
         container_name: webstore
         ports:
         - "8070:8080"
@@ -18,8 +18,8 @@ services:
     customer:
         image: egapm/microsvcapp:customers
         build:
-            context: ..\Modules\customers\
-            dockerfile:  $PWD\Modules\customers\BTMEmbedded\Dockerfile 
+            context: ../Modules/customers/
+            dockerfile:  $PWD/Modules/customers/BTMEmbedded/Dockerfile 
         container_name: customer 
         networks:
         - testnet
@@ -28,16 +28,16 @@ services:
     gateway:
         image: egapm/microsvcapp:gateway
         build:
-            context: ..\Modules\gateway\
-            dockerfile:  $PWD\Modules\gateway\BTMEmbedded\Dockerfile 
+            context: ../Modules/gateway/
+            dockerfile:  $PWD/Modules/gateway/BTMEmbedded/Dockerfile 
         container_name: gateway 
         networks:
         - testnet
     order:
         image: egapm/microsvcapp:order
         build:
-            context: ..\Modules\order\
-            dockerfile:  $PWD\Modules\order\BTMEmbedded\Dockerfile 
+            context: ../Modules/order/
+            dockerfile:  $PWD/Modules/order/BTMEmbedded/Dockerfile 
         container_name: order 
         networks:
         - testnet
@@ -46,8 +46,8 @@ services:
     payment:
         image: egapm/microsvcapp:payment
         build:
-            context: ..\Modules\payment\
-            dockerfile:  $PWD\Modules\payment\BTMEmbedded\Dockerfile 
+            context: ../Modules/payment/
+            dockerfile:  $PWD/Modules/payment/BTMEmbedded/Dockerfile 
         container_name: payment 
         networks:
         - testnet
@@ -56,8 +56,8 @@ services:
     product:
         image: egapm/microsvcapp:product
         build:
-            context: ..\Modules\products\
-            dockerfile:  $PWD\Modules\products\BTMEmbedded\Dockerfile 
+            context: ../Modules/products/
+            dockerfile:  $PWD/Modules/products/BTMEmbedded/Dockerfile 
         container_name: product 
         networks:
         - testnet
@@ -66,8 +66,8 @@ services:
     quote:
         image: egapm/microsvcapp:quote
         build:
-            context: ..\Modules\quote\
-            dockerfile:  $PWD\Modules\quote\BTMEmbedded\Dockerfile 
+            context: ../Modules/quote/
+            dockerfile:  $PWD/Modules/quote/BTMEmbedded/Dockerfile 
         container_name: quote 
         networks:
         - testnet
