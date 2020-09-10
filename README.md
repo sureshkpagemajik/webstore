@@ -67,6 +67,7 @@
 <b><u>Step 1 :</u></b> Navigate to directory where the docker-compose.yml is present and run the below command.
 
 <pre><code>docker-compose down
+</code></pre>
 
 <h2>THIS IS FOR THE PURPOSES OF TRAINING OR INTERNAL USE ONLY, DO NOT SHARE TO CUSTOMER/PROSPECT/OTHERS</h2> 
 
