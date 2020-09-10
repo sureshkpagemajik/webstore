@@ -62,5 +62,11 @@
 
 <b><u>Step 4 :</u></b> Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
+<h2>To stop the application</h2>
+
+<b><u>Step 1 :</u></b> Navigate to directory where the docker-compose.yml is present and run the below command.
+
+<pre><code>docker-compose down
+
 <h2>THIS IS FOR THE PURPOSES OF TRAINING OR INTERNAL USE ONLY, DO NOT SHARE TO CUSTOMER/PROSPECT/OTHERS</h2> 
 
