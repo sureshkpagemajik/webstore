@@ -12,8 +12,9 @@
   <li>Make sure you have git installed.</li>
   <li>Make sure you have docker-compose installed.</li>
 </ul>
+<h2>Compile and Build Application</h2> 
 <b><u>Step 1 :</u></b> To clone this application
-<pre><code>git clone https://github.com/Gokulanand-Narayanan/MicroSvcApp.git
+<pre><code>git clone https://github.com/javaapm/MicroSvcApp.git
 </code></pre>
 <b><u>Step 2 :</u></b> Navigate to application home directory 
 <pre><code>cd MicroSvcApp
@@ -22,21 +23,18 @@
 <pre><code>mvn clean package
 </code></pre>
 
-<h2>To start containers without BTM enabled</h2>
+<h2>Run the application without APM Agent attached</h2>
 
-<b><u>Step 1 :</u></b> Navigate to application home directory 
+<b><u>Step 1 :</u></b> Navigate to application home directory (MicroSvcApp)
 
-<pre><code>MicroSvcApp
+<b><u>Step 2 :</u></b> To build docker images and run all the application containers
+
+<pre><code>docker-compose up -d --build
 </code></pre>
 
-<b><u>Step 2 : To build docker images and run all the application containers</u></b>
+<b><u>Step 3 :</u></b> To ensure all containers started and running <code>docker ps -a</code>
 
-<pre><code>docker-compose up -d
-</code></pre>
-
-To ensure all containers started and running <code>docker ps -a</code>
-
-Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
+<b><u>Step 4 :</u></b> Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 
 <h2>To start with BTM enabled </h2>
