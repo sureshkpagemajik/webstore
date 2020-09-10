@@ -36,7 +36,7 @@
 
 <b><u>Step 4 :</u></b> Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
-<h2>Run the application with APM Agent using volume mount</h2>
+<h2>Run the application with APM Agent using volume mount (Only Linux)</h2>
 
 <b><u>Step 1 :</u></b> Navigate to directory "MicroSvcApp/btm_volume_mount/"
 
