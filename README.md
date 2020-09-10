@@ -1,4 +1,10 @@
-
+<h2>Java Based Micro Services ECommerce Application</h2> 
+<h2>This application can be executed in following modes</h2> 
+<ol>
+  <li>Run the application without APM Agent attached to it</li>
+  <li>Run the application with APM Agent using volume mount approach</li>
+  <li>Run the application using embedded APM Agent</li>
+</ol>
 <h2>Pre-requisites</h2> 
 <ul>
   <li>Make sure you have JAVA 8 or JRE 8 installed.</li>
