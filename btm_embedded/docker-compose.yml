@@ -4,6 +4,7 @@ services:
         image: egapm/microsvcapp:webstore
         build:
             context: ../Modules/webstore/
+            dockerfile:  $PWD/Modules/webstore/BTMEmbedded/Dockerfile
         container_name: webstore
         ports:
         - "8070:8080"
