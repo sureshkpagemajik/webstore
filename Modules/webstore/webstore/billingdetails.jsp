@@ -1,5 +1,7 @@
 <%@page import="com.webstore.core.uriconstants.ProductCartDetails"%>
 <%@ page import="org.json.*"%>
+<%@ page import="java.io.*"%>
+<%@ page import="java.text.*"%>
 <%@ page import="javax.servlet.http.HttpSession"%>
 <%@ page import="org.springframework.http.HttpEntity"%>
 <%@ page import="org.springframework.http.HttpHeaders"%>
@@ -9,6 +11,45 @@
 <%@ page import="org.springframework.web.util.UriComponentsBuilder"%>
 <%@ page import="com.webstore.core.uriconstants.ServerUris"%>
 <%@ page import="com.webstore.core.uriconstants.URIConstants"%>
+
+<%!
+
+	public void logDebug(String type, String entity, String msg)
+	{
+		String logDateAndTime;
+		PrintWriter logWriter;
+		String log;
+	
+		java.util.Date date = new java.util.Date();
+		logDateAndTime = getDateAndTime(date);
+
+		try
+		{
+			String ss = System.getProperty("app.log.path");
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
+			logWriter = new PrintWriter(new FileWriter(ss, true));
+		}
+		catch (Exception e)
+		{
+			System.err.println("Cannot open log file ");
+			return;
+		}
+		log =
+			new String(logDateAndTime + " " + type + " " + entity + " " + msg);
+		logWriter.println(log);
+		logWriter.close();
+	}
+
+	private String getDateAndTime(java.util.Date d)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		return (sdf.format(d));
+	}
+
+
+%>
 
 
 <!DOCTYPE HTML>
@@ -216,6 +257,8 @@ ng\:form {
 				session.setAttribute("tag", tag);
 				session.setAttribute("orderId", String.valueOf(orderId));
 				session.setAttribute("amount", String.valueOf(totalAmount));
+				System.out.println("INFO CHECKOUT-ACTION-SUCCESS  Cart items are checked out successfully !!!");
+				logDebug("INFO", "CHECKOUT-ACTION-SUCCESS", "Cart items are checked out successfully !!!");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

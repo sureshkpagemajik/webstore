@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ page import="org.json.*"%>
+<%@ page import="java.io.*"%>
+<%@ page import="java.text.*"%>
 <%@ page import="javax.servlet.http.HttpSession"%>
 <%@ page import="org.springframework.http.HttpEntity"%>
 <%@ page import="org.springframework.http.HttpHeaders"%>
@@ -43,7 +45,43 @@
     <!-- <script type="application/javascript" src="js/controller.js"></script> -->
   </head>
 <%!
-public int addtocart(int productId, HttpSession sessionObj) {
+
+	public void logDebug(String type, String entity, String msg)
+	{
+		String logDateAndTime;
+		PrintWriter logWriter;
+		String log;
+	
+		java.util.Date date = new java.util.Date();
+		logDateAndTime = getDateAndTime(date);
+
+		try
+		{
+						String ss = System.getProperty("app.log.path");
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
+			logWriter = new PrintWriter(new FileWriter(ss, true));
+		}
+		catch (Exception e)
+		{
+			System.err.println("Cannot open log file ");
+			return;
+		}
+		log =
+			new String(logDateAndTime + " " + type + " " + entity + " " + msg);
+		logWriter.println(log);
+		logWriter.close();
+	}
+
+	private String getDateAndTime(java.util.Date d)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		return (sdf.format(d));
+	}
+
+
+	public int addtocart(int productId, HttpSession sessionObj) {
 		int result = -1;
 		try{
 			RestTemplate restTemplate = new RestTemplate();
@@ -65,12 +103,12 @@ public int addtocart(int productId, HttpSession sessionObj) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("param jsonObj=>"+jsonObj.toString());
+			//System.out.println("param jsonObj=>"+jsonObj.toString());
 			
 			UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(ServerUris.QUOTE_SERVER_URI+URIConstants.ADD_PRODUCT_TO_CART)
 					.queryParam("params", jsonObj);	
 			HttpEntity<?> entity = new HttpEntity<>(headers);
-			System.out.println(" storing the product details in Quote server using URL  : " + builder.toString());
+			//System.out.println(" storing the product details in Quote server using URL  : " + builder.toString());
 			HttpEntity<String> returnString = restTemplate.exchange(builder.build().toUri(), HttpMethod.GET, entity, String.class);
 			JSONObject returnJsonObj = null;
 			try {
@@ -81,6 +119,8 @@ public int addtocart(int productId, HttpSession sessionObj) {
 			if(returnJsonObj!=null){
 				result = returnJsonObj.getInt("cartId");
 			}
+			System.out.println("INFO  CART-ACTION-ADD  There is an item added cart. ProductID = "+productId);
+			logDebug("INFO", "CART-ACTION-ADD", "There is an item added cart. ProductID = "+productId);
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -115,7 +155,7 @@ public int addtocart(int productId, HttpSession sessionObj) {
 		
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(ServerUris.PRODUCT_SERVER_URI+URIConstants.GET_PRODUCT).queryParam("params", jsonObj);	
 		HttpEntity<?> entity = new HttpEntity<>(headers);
-		System.out.println(" getting the product details from Product server using URL  : " + builder.toString());
+		//System.out.println(" getting the product details from Product server using URL  : " + builder.toString());
 		HttpEntity<String> returnString = restTemplate.exchange(builder.build().toUri(), HttpMethod.GET, entity, String.class);
 		
 		JSONObject returnJsonObj = null;

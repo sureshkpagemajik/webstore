@@ -2,6 +2,9 @@ package com.webstore.core.engine.web.controller;
 
 import java.io.IOException;
 
+import java.io.*;
+import java.text.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +29,42 @@ import com.webstore.core.uriconstants.URIConstants;
 @WebServlet("/cartController/removeCartItems")
 public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	public void logDebug(String type, String entity, String msg)
+	{
+
+		String logDateAndTime;
+		PrintWriter logWriter;
+		String log;
+	
+		java.util.Date date = new java.util.Date();
+		logDateAndTime = getDateAndTime(date);
+
+		try
+		{
+			String ss = System.getProperty("app.log.path");
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
+			logWriter = new PrintWriter(new FileWriter(ss, true));
+		}
+		catch (Exception e)
+		{
+			System.err.println("Cannot open log file ");
+			return;
+		}
+		log =
+			new String(logDateAndTime + " " + type + " " + entity + " " + msg);
+		logWriter.println(log);
+		logWriter.close();
+
+	}
+
+	private String getDateAndTime(java.util.Date d)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		return (sdf.format(d));
+	}
        
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -33,6 +72,8 @@ public class CartController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String productIdStr = request.getParameter("productId"); 
 //		String redirectto =  request.getParameter("redirectto");
+		System.out.println("INFO  CART-ACTION-DELETE  There is an item removed from cart. ProductID = "+productIdStr);
+		logDebug("INFO", "CART-ACTION-DELETE", "There is an item removed from cart. ProductID = "+productIdStr);
 		boolean emptyCart = false;
 		int productId = -1;
 		if(productIdStr != null){
