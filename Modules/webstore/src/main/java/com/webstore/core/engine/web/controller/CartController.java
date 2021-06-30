@@ -43,14 +43,16 @@ public class CartController extends HttpServlet {
 		try
 		{
 			String ss = System.getProperty("app.log.path");
-			if(ss != null && ss.length() <=0 ){
-				ss = "/opt/egapp/logs/server.log";
-			}
+			if (ss == null ||  ss.length() <= 0) {
+                ss = "/opt/egapp/logs/server.log";
+            }
+            System.out.println("Log path: "+ss);
 			logWriter = new PrintWriter(new FileWriter(ss, true));
 		}
 		catch (Exception e)
 		{
 			System.err.println("Cannot open log file ");
+			e.printStackTrace();
 			return;
 		}
 		log =
