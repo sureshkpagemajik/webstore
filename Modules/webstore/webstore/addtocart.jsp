@@ -57,17 +57,15 @@
 
 		try
 		{
-			String ss = System.getProperty("app.log.path");
-			if (ss == null ||  ss.length() <= 0) {
-                ss = "/opt/egapp/logs/server.log";
-            }
-            System.out.println("Log path: "+ss);
+						String ss = System.getProperty("app.log.path");
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
 			logWriter = new PrintWriter(new FileWriter(ss, true));
 		}
 		catch (Exception e)
 		{
 			System.err.println("Cannot open log file ");
-			e.printStackTrace();
 			return;
 		}
 		log =
@@ -177,6 +175,9 @@
 		JSONObject productJObj = productJArr.getJSONObject(0);
 
 		String productName = productJObj.getString("name");
+
+				logDebug("INFO", "| Item added from cart |", "ProductID:"+productID+" | ProductDescription:"+productName);
+
 		String description = productJObj.getString("description");
 		String country = productJObj.getString("country");
 		String imageName = productJObj.getString("image");

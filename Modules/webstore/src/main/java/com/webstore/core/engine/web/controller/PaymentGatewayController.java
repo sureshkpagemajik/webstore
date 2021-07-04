@@ -44,15 +44,13 @@ public class PaymentGatewayController extends HttpServlet {
 		try
 		{
 			String ss = System.getProperty("app.log.path");
-			if (ss == null ||  ss.length() <= 0) {
-                ss = "/opt/egapp/logs/server.log";
-            }
-            System.out.println("Log path: "+ss);
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
 			logWriter = new PrintWriter(new FileWriter(ss, true));		}
 		catch (Exception e)
 		{
 			System.err.println("Cannot open log file ");
-			e.printStackTrace();
 			return;
 		}
 		log =
@@ -89,11 +87,14 @@ public class PaymentGatewayController extends HttpServlet {
 					//.queryParam("params", jsonParams).build().toUri());
 			if(gateway != null && gateway.equals("visa")){
 				System.out.println("INFO  PAYMENT-ACTION-SUCCESS  The payment has been successfully done !!!");
-				logDebug("INFO", "PAYMENT-ACTION-SUCCESS", "The payment has been successfully done !!!");
+				//logDebug("INFO", "PAYMENT-ACTION-SUCCESS", "The payment has been successfully done !!!");
+				logDebug("INFO", "| Payment success |", " TransactionValue:"+b+" | Gateway:"+gateway.toUpperCase());
 			}
 			else {
 				System.out.println("INFO  PAYMENT-ACTION-FAIL  Payment is unsuccessful !!!");
-				logDebug("INFO", "PAYMENT-ACTION-FAIL", "Payment is unsuccessful !!!");
+				int b = (int)(Math.random()*(1500-250+1)+250); 
+				logDebug("ERROR", "| Payment failure |", " TransactionValue:"+b+" | Gateway:"+gateway.toUpperCase());
+				//ERROR |  Payment failure|  TransactionValue:$2500 | Gateway:VISA.
 			}
 
 			UriComponentsBuilder builder = UriComponentsBuilder

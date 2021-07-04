@@ -26,16 +26,14 @@
 		try
 		{
 			String ss = System.getProperty("app.log.path");
-			if (ss == null ||  ss.length() <= 0) {
-                ss = "/opt/egapp/logs/server.log";
-            }
-            System.out.println("Log path: "+ss);
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
 			logWriter = new PrintWriter(new FileWriter(ss, true));
 		}
 		catch (Exception e)
 		{
 			System.err.println("Cannot open log file ");
-			e.printStackTrace();
 			return;
 		}
 		log =
@@ -259,8 +257,8 @@ ng\:form {
 				session.setAttribute("tag", tag);
 				session.setAttribute("orderId", String.valueOf(orderId));
 				session.setAttribute("amount", String.valueOf(totalAmount));
-				System.out.println("INFO CHECKOUT-ACTION-SUCCESS  Cart items are checked out successfully !!!");
-				logDebug("INFO", "CHECKOUT-ACTION-SUCCESS", "Cart items are checked out successfully !!!");
+				//System.out.println("INFO CHECKOUT-ACTION-SUCCESS  Cart items are checked out successfully !!!");
+				//logDebug("INFO", "CHECKOUT-ACTION-SUCCESS", "Cart items are checked out successfully !!!");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

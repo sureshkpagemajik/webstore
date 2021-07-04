@@ -43,16 +43,14 @@ public class CartController extends HttpServlet {
 		try
 		{
 			String ss = System.getProperty("app.log.path");
-			if (ss == null ||  ss.length() <= 0) {
-                ss = "/opt/egapp/logs/server.log";
-            }
-            System.out.println("Log path: "+ss);
+			if(ss != null && ss.length() <=0 ){
+				ss = "/opt/egapp/logs/server.log";
+			}
 			logWriter = new PrintWriter(new FileWriter(ss, true));
 		}
 		catch (Exception e)
 		{
 			System.err.println("Cannot open log file ");
-			e.printStackTrace();
 			return;
 		}
 		log =
@@ -74,8 +72,50 @@ public class CartController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String productIdStr = request.getParameter("productId"); 
 //		String redirectto =  request.getParameter("redirectto");
+
+
+		int product_id1 = -99;
+
+		product_id1 = Integer.parseInt(productIdStr);
+
+		
+
+		JSONObject jsonObj1 = new JSONObject();    
+		try {
+			jsonObj1.put("id", product_id1);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		UriComponentsBuilder builder1 = UriComponentsBuilder.fromHttpUrl(ServerUris.PRODUCT_SERVER_URI+URIConstants.GET_PRODUCT).queryParam("params", jsonObj);	
+		HttpEntity<?> entity1 = new HttpEntity<>(headers);
+		//System.out.println(" getting the product details from Product server using URL  : " + builder.toString());
+		HttpEntity<String> returnString1 = restTemplate.exchange(builder1.build().toUri(), HttpMethod.GET, entity1, String.class);
+		
+		JSONObject returnJsonObj1 = null;
+		try {
+			returnJsonObj1 = new JSONObject(returnString1.getBody());
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		JSONArray productJArr1 = returnJsonObj1.getJSONArray("products");
+		JSONObject productJObj1 = productJArr1.getJSONObject(0);
+
+		String productName1 = productJObj1.getString("name");
+		String description1 = productJObj1.getString("description");
+
+
+
+
+
+
 		System.out.println("INFO  CART-ACTION-DELETE  There is an item removed from cart. ProductID = "+productIdStr);
-		logDebug("INFO", "CART-ACTION-DELETE", "There is an item removed from cart. ProductID = "+productIdStr);
+		logDebug("ERROR", "| Item deleted from cart |", "ProductID:"+productIdStr+" | ProductDescription:"+productName1);
+		//INFO | Item added to cart | ProductID: 12345 | ProductDescription: BlueJeans
+
 		boolean emptyCart = false;
 		int productId = -1;
 		if(productIdStr != null){
