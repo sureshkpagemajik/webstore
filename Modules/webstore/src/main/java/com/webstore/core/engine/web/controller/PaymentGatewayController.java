@@ -85,6 +85,7 @@ public class PaymentGatewayController extends HttpServlet {
 			//System.out.println("Payment Url = " + UriComponentsBuilder
 					//.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
 					//.queryParam("params", jsonParams).build().toUri());
+					int b = (int)(Math.random()*(1500-250+1)+250); 
 			if(gateway != null && gateway.equals("visa")){
 				System.out.println("INFO  PAYMENT-ACTION-SUCCESS  The payment has been successfully done !!!");
 				//logDebug("INFO", "PAYMENT-ACTION-SUCCESS", "The payment has been successfully done !!!");
@@ -92,7 +93,7 @@ public class PaymentGatewayController extends HttpServlet {
 			}
 			else {
 				System.out.println("INFO  PAYMENT-ACTION-FAIL  Payment is unsuccessful !!!");
-				int b = (int)(Math.random()*(1500-250+1)+250); 
+				
 				logDebug("ERROR", "| Payment failure |", " TransactionValue:"+b+" | Gateway:"+gateway.toUpperCase());
 				//ERROR |  Payment failure|  TransactionValue:$2500 | Gateway:VISA.
 			}

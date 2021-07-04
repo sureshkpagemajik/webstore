@@ -105,7 +105,9 @@ public class CartController extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		JSONArray productJArr1 = returnJsonObj1.getJSONArray("products");
+	
+		try {
+			JSONArray productJArr1 = returnJsonObj1.getJSONArray("products");
 		JSONObject productJObj1 = productJArr1.getJSONObject(0);
 
 		String productName1 = productJObj1.getString("name");
@@ -119,6 +121,8 @@ public class CartController extends HttpServlet {
 		System.out.println("INFO  CART-ACTION-DELETE  There is an item removed from cart. ProductID = "+productIdStr);
 		logDebug("ERROR", "| Item deleted from cart |", "ProductID:"+productIdStr+" | ProductDescription:"+productName1);
 		//INFO | Item added to cart | ProductID: 12345 | ProductDescription: BlueJeans
+
+		} catch (Exception e){}
 
 		boolean emptyCart = false;
 		int productId = -1;
