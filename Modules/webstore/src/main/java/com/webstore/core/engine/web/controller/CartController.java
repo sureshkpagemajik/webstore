@@ -78,7 +78,10 @@ public class CartController extends HttpServlet {
 
 		product_id1 = Integer.parseInt(productIdStr);
 
-		
+		RestTemplate restTemplate1 = new RestTemplate();
+			HttpHeaders headers = new HttpHeaders();
+			headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+
 
 		JSONObject jsonObj1 = new JSONObject();    
 		try {
@@ -88,10 +91,10 @@ public class CartController extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		UriComponentsBuilder builder1 = UriComponentsBuilder.fromHttpUrl(ServerUris.PRODUCT_SERVER_URI+URIConstants.GET_PRODUCT).queryParam("params", jsonObj);	
+		UriComponentsBuilder builder1 = UriComponentsBuilder.fromHttpUrl(ServerUris.PRODUCT_SERVER_URI+URIConstants.GET_PRODUCT).queryParam("params", jsonObj1);	
 		HttpEntity<?> entity1 = new HttpEntity<>(headers);
 		//System.out.println(" getting the product details from Product server using URL  : " + builder.toString());
-		HttpEntity<String> returnString1 = restTemplate.exchange(builder1.build().toUri(), HttpMethod.GET, entity1, String.class);
+		HttpEntity<String> returnString1 = restTemplate1.exchange(builder1.build().toUri(), HttpMethod.GET, entity1, String.class);
 		
 		JSONObject returnJsonObj1 = null;
 		try {
