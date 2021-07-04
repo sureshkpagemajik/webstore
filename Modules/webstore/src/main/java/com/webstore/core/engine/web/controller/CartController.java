@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.io.*;
 import java.text.*;
+import org.json.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -79,8 +80,8 @@ public class CartController extends HttpServlet {
 		product_id1 = Integer.parseInt(productIdStr);
 
 		RestTemplate restTemplate1 = new RestTemplate();
-			HttpHeaders headers = new HttpHeaders();
-			headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+			HttpHeaders headers1 = new HttpHeaders();
+			headers1.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
 
 		JSONObject jsonObj1 = new JSONObject();    
@@ -92,7 +93,7 @@ public class CartController extends HttpServlet {
 		}
 		
 		UriComponentsBuilder builder1 = UriComponentsBuilder.fromHttpUrl(ServerUris.PRODUCT_SERVER_URI+URIConstants.GET_PRODUCT).queryParam("params", jsonObj1);	
-		HttpEntity<?> entity1 = new HttpEntity<>(headers);
+		HttpEntity<?> entity1 = new HttpEntity<>(headers1);
 		//System.out.println(" getting the product details from Product server using URL  : " + builder.toString());
 		HttpEntity<String> returnString1 = restTemplate1.exchange(builder1.build().toUri(), HttpMethod.GET, entity1, String.class);
 		
