@@ -136,6 +136,7 @@ public class PaymentGatewayController extends HttpServlet {
 					response.getWriter().print("Http Status 500 - Internal Server Error");
 				}
 			}
+			request.getSession(false).setAttribute("amount",value);
 			if (returnString != null) {
 				response.getWriter().print(returnString.getBody());
 			}
