@@ -91,7 +91,7 @@ public class PaymentGatewayController extends HttpServlet {
 					//.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
 					//.queryParam("params", jsonParams).build().toUri());
 					int b = (int)(Math.random()*(1500-250+1)+250);
-					String ss = request.getSession(false).getAttribute("amount");
+					String ss = (String)request.getSession(false).getAttribute("amount");
 					int value = (int)(Math.random()*(1500-250+1)+250);
 					if (ss != null && ss.length() > 0)
 					{
