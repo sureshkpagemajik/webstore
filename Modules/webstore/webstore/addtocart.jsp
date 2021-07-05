@@ -55,19 +55,23 @@
 		java.util.Date date = new java.util.Date();
 		logDateAndTime = getDateAndTime(date);
 
-		try
-		{
-						String ss = System.getProperty("app.log.path");
-			if(ss != null && ss.length() <=0 ){
-				ss = "/opt/egapp/logs/server.log";
-			}
-			logWriter = new PrintWriter(new FileWriter(ss, true));
-		}
-		catch (Exception e)
-		{
-			System.err.println("Cannot open log file ");
-			return;
-		}
+		 try
+        {
+//            System.setProperty("app.log.path", "E://server.log");
+            String ss = System.getProperty("app.log.path");
+            if (ss == null ||  ss.length() <= 0) {
+                ss = "/opt/egapp/logs/server.log";
+            }
+            System.out.println("Log path: "+ss);
+            logWriter = new PrintWriter(new FileWriter(ss, true));
+        }
+        catch (Exception e)
+        {
+            System.err.println("Cannot open log file ");
+            e.printStackTrace();
+        }finaly {
+           
+        }
 		log =
 			new String(logDateAndTime + " " + type + " " + entity + " " + msg);
 		logWriter.println(log);
