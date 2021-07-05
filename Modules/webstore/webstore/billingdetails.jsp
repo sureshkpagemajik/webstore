@@ -223,8 +223,14 @@ ng\:form {
 			double totalAmount = 0;
 			String tag = "0 | 0";
 			try {
-				totalAmount = jsonParams.getJSONObject("cart").getInt("total");
-
+				try
+				{
+					totalAmount = jsonParams.getJSONObject("cart").getInt("total");
+				}
+				catch (Exception eee)
+				{
+				}
+				
 				if(totalAmount == 0){
 		            totalAmount=ProductCartDetails.getTotalAmount(200,1500);
 		        }
