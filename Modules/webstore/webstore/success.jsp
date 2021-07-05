@@ -43,11 +43,10 @@
 	String orderId = null;
 	String amount = null;
 		
-	String orderIdObj = (String)session.getAttribute("orderId");
-	String amountObj = (String) session.getAttribute("amount");
+	Object orderIdObj = session.getAttribute("orderId");
+	Object amountObj = session.getAttribute("amount");
 
-	System.out.println("orderIdObj : "+orderIdObj+"  amountObj :   "+amountObj);
-	
+		
 	if(orderIdObj== null) {
         orderId=String.valueOf(ProductCartDetails.getOrderId(100,500));
     }else{
