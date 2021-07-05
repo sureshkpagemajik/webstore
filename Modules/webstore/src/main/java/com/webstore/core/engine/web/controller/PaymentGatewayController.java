@@ -35,7 +35,7 @@ public class PaymentGatewayController extends HttpServlet {
 	public void logDebug(String type, String entity, String msg)
 	{
 		String logDateAndTime;
-		PrintWriter logWriter;
+		PrintWriter logWriter = null;
 		String log;
 	
 		java.util.Date date = new java.util.Date();
@@ -58,8 +58,10 @@ public class PaymentGatewayController extends HttpServlet {
         }
 		log =
 			new String(logDateAndTime + " " + type + " " + entity + " " + msg);
-		logWriter.println(log);
-		logWriter.close();
+		if(logWriter != null) {
+			logWriter.println(log);
+			logWriter.close();
+		}
 	}
 
 	private String getDateAndTime(java.util.Date d)
