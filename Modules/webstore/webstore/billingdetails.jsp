@@ -224,15 +224,17 @@ ng\:form {
 			String tag = "0 | 0";
 			try {
 
-					totalAmount = jsonParams.getJSONObject("cart").getInt("total");
-
-				
-				if(totalAmount == 0){
+					if(totalAmount == 0){
 		            totalAmount=ProductCartDetails.getTotalAmount(200,1500);
 		        }
 				int b = (int)(Math.random()*(1500-250+1)+250);
 				session.setAttribute("amount", totalAmount);
 				logDebug("INFO", "| Checkout success |", " TransactionValue:$"+totalAmount+" | OrderID:"+b);
+
+					totalAmount = jsonParams.getJSONObject("cart").getInt("total");
+
+				
+			
 
 				RestTemplate restTemplate = new RestTemplate();
 				HttpHeaders headers = new HttpHeaders();
