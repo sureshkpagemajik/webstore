@@ -124,7 +124,7 @@
 				result = returnJsonObj.getInt("cartId");
 			}
 			System.out.println("INFO  CART-ACTION-ADD  There is an item added cart. ProductID = "+productId);
-			logDebug("INFO", "CART-ACTION-ADD", "There is an item added cart. ProductID = "+productId);
+			//logDebug("INFO", "CART-ACTION-ADD", "There is an item added cart. ProductID = "+productId);
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -180,7 +180,7 @@
 
 		String productName = productJObj.getString("name");
 
-				logDebug("INFO", "| Item added from cart |", "ProductID:"+productID+" | ProductDescription:"+productName);
+				logDebug("INFO", "| Item added to cart |", "ProductID:"+productID+" | ProductDescription:"+productName);
 
 		String description = productJObj.getString("description");
 		String country = productJObj.getString("country");

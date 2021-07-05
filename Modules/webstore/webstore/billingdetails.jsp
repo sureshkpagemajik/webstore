@@ -263,6 +263,7 @@ ng\:form {
 				session.setAttribute("amount", String.valueOf(totalAmount));
 				//System.out.println("INFO CHECKOUT-ACTION-SUCCESS  Cart items are checked out successfully !!!");
 				//logDebug("INFO", "CHECKOUT-ACTION-SUCCESS", "Cart items are checked out successfully !!!");
+				logDebug("INFO", "| Checkout success |", " TransactionValue:$"+totalAmount+" | OrderID:"+orderId);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

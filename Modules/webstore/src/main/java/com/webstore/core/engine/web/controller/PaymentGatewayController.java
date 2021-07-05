@@ -90,16 +90,30 @@ public class PaymentGatewayController extends HttpServlet {
 			//System.out.println("Payment Url = " + UriComponentsBuilder
 					//.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
 					//.queryParam("params", jsonParams).build().toUri());
-					int b = (int)(Math.random()*(1500-250+1)+250); 
+					int b = (int)(Math.random()*(1500-250+1)+250);
+					String ss = request.getSession(false).getAttribute("amount");
+					int value = (int)(Math.random()*(1500-250+1)+250);
+					if (ss != null && ss.length() > 0)
+					{
+						try
+						{
+							value = Integer.parseInt(ss);
+						}
+						catch (Exception eee)
+						{
+						}
+						
+					}
+					 
 			if(gateway != null && gateway.equals("visa")){
-				System.out.println("INFO  PAYMENT-ACTION-SUCCESS  The payment has been successfully done !!!");
+				//System.out.println("INFO  PAYMENT-ACTION-SUCCESS  The payment has been successfully done !!!");
 				//logDebug("INFO", "PAYMENT-ACTION-SUCCESS", "The payment has been successfully done !!!");
-				logDebug("INFO", "| Payment success |", " TransactionValue:"+b+" | Gateway:"+gateway.toUpperCase());
+				logDebug("INFO", "| Payment success |", " TransactionValue:$"+value+" | Gateway:"+gateway.toUpperCase());
 			}
 			else {
-				System.out.println("INFO  PAYMENT-ACTION-FAIL  Payment is unsuccessful !!!");
+				//System.out.println("INFO  PAYMENT-ACTION-FAIL  Payment is unsuccessful !!!");
 				
-				logDebug("ERROR", "| Payment failure |", " TransactionValue:"+b+" | Gateway:"+gateway.toUpperCase());
+				logDebug("ERROR", "| Payment failure |", " TransactionValue:$"+value+" | Gateway:"+gateway.toUpperCase());
 				//ERROR |  Payment failure|  TransactionValue:$2500 | Gateway:VISA.
 			}
 

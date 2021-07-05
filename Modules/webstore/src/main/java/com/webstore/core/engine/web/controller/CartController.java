@@ -122,7 +122,7 @@ public class CartController extends HttpServlet {
 
 
 
-		System.out.println("INFO  CART-ACTION-DELETE  There is an item removed from cart. ProductID = "+productIdStr);
+		//System.out.println("INFO  CART-ACTION-DELETE  There is an item removed from cart. ProductID = "+productIdStr);
 		logDebug("ERROR", "| Item deleted from cart |", "ProductID:"+productIdStr+" | ProductDescription:"+productName1);
 		//INFO | Item added to cart | ProductID: 12345 | ProductDescription: BlueJeans
 
