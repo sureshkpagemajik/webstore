@@ -37,7 +37,7 @@
         {
             System.err.println("Cannot open log file ");
             e.printStackTrace();
-        }finaly {
+        }finally {
            
         }
 		log =
