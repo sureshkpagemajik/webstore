@@ -123,7 +123,7 @@
 			if(returnJsonObj!=null){
 				result = returnJsonObj.getInt("cartId");
 			}
-			System.out.println("INFO  CART-ACTION-ADD  There is an item added cart. ProductID = "+productId);
+			//System.out.println("INFO  CART-ACTION-ADD  There is an item added cart. ProductID = "+productId);
 			//logDebug("INFO", "CART-ACTION-ADD", "There is an item added cart. ProductID = "+productId);
 		}
 		catch(Exception e){

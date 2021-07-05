@@ -218,11 +218,17 @@ ng\:form {
 
 			session.removeAttribute("cartItems");
 			JSONObject jsonParams = result;
+			System.out.println("result : "+result);
 			int orderId = 0;
 			double totalAmount = 0;
 			String tag = "0 | 0";
 			try {
 				totalAmount = jsonParams.getJSONObject("cart").getInt("total");
+
+				if(totalAmount == 0){
+		            totalAmount=ProductCartDetails.getTotalAmount(200,1500);
+		        }
+
 				session.setAttribute("amount", totalAmount);
 
 				RestTemplate restTemplate = new RestTemplate();
