@@ -147,7 +147,7 @@ ng\:form {
 				response.sendRedirect("signin.jsp");
 				return;
 			}
-
+			System.out.println("I am inside this #### ");
 			String lastName = customerObj.getString("lastName");
 			if (lastName == null || lastName.equalsIgnoreCase("null"))
 				lastName = "";
