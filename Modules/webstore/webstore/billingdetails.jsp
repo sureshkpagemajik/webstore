@@ -230,8 +230,9 @@ ng\:form {
 				if(totalAmount == 0){
 		            totalAmount=ProductCartDetails.getTotalAmount(200,1500);
 		        }
-
+				int b = (int)(Math.random()*(1500-250+1)+250);
 				session.setAttribute("amount", totalAmount);
+				logDebug("INFO", "| Checkout success |", " TransactionValue:$"+totalAmount+" | OrderID:"+b);
 
 				RestTemplate restTemplate = new RestTemplate();
 				HttpHeaders headers = new HttpHeaders();
