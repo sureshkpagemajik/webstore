@@ -55,8 +55,6 @@ public class CartController extends HttpServlet {
         {
             System.err.println("Cannot open log file ");
             e.printStackTrace();
-        }finally {
-           
         }
 		log =
 			new String(logDateAndTime + " " + type + " " + entity + " " + msg);
