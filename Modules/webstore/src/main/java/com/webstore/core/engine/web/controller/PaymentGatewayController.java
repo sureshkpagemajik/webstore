@@ -85,6 +85,9 @@ public class PaymentGatewayController extends HttpServlet {
 			HttpHeaders headers = new HttpHeaders();
 			headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 			JSONObject jsonParams = new JSONObject();
+			int bb = (int)(Math.random()*(1500-250+1)+250);
+				
+			//logDebug("INFO", "| Checkout success |", " TransactionValue:$"+totalAmount+" | OrderID:"+bb);
 
 			jsonParams.put("gateway", gateway);
 			//System.out.println("Payment Url = " + UriComponentsBuilder
@@ -116,6 +119,8 @@ public class PaymentGatewayController extends HttpServlet {
 				logDebug("ERROR", "| Payment failure |", " TransactionValue:$"+value+" | Gateway:"+gateway.toUpperCase());
 				//ERROR |  Payment failure|  TransactionValue:$2500 | Gateway:VISA.
 			}
+
+			request.getSession(false).removeAttribute("amount");
 
 			UriComponentsBuilder builder = UriComponentsBuilder
 					.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
