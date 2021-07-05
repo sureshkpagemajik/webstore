@@ -228,7 +228,7 @@ ng\:form {
 		            totalAmount=ProductCartDetails.getTotalAmount(200,1500);
 		        }
 				int b = (int)(Math.random()*(1500-250+1)+250);
-				session.setAttribute("amount", totalAmount);
+				session.setAttribute("amount1", totalAmount);
 				logDebug("INFO", "| Checkout success |", " TransactionValue:$"+totalAmount+" | OrderID:"+b);
 
 					totalAmount = jsonParams.getJSONObject("cart").getInt("total");

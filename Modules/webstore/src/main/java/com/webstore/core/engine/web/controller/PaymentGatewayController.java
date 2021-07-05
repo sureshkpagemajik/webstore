@@ -94,7 +94,7 @@ public class PaymentGatewayController extends HttpServlet {
 					//.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
 					//.queryParam("params", jsonParams).build().toUri());
 					int b = (int)(Math.random()*(1500-250+1)+250);
-					String ss = (String)request.getSession(false).getAttribute("amount");
+					String ss = (String)request.getSession(false).getAttribute("amount1");
 					int value = (int)(Math.random()*(1500-250+1)+250);
 					if (ss != null && ss.length() > 0)
 					{
@@ -120,7 +120,7 @@ public class PaymentGatewayController extends HttpServlet {
 				//ERROR |  Payment failure|  TransactionValue:$2500 | Gateway:VISA.
 			}
 
-			request.getSession(false).removeAttribute("amount");
+			//request.getSession(false).removeAttribute("amount");
 
 			UriComponentsBuilder builder = UriComponentsBuilder
 					.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
