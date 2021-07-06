@@ -116,6 +116,13 @@
 											<li><a href="servletprocessing.jsp">Servlet Processing Issues</a></li>
 										</ul>
 									</li>
+									<li class="dropdown-submenu">
+										<a href="home.jsp?cat=26">Network</a>
+										<ul class="dropdown-menu">
+											<!--<li><a href="excessiveSql.jsp">Excessive SQL (N+1 anti-pattern)</a></li>-->
+											<li><a href="heavyPayload.jsp">Heavy Payload (Request)</a></li>
+										</ul>
+									</li>
 								</ul>
 							</li>
 											
