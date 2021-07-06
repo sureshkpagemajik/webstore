@@ -18,7 +18,7 @@
 		String payloadStr = "";
 		if(payloadsize != null && payloadsize.length() > 0){
 			try {
-				size = Integer.parsenInt(payloadsize);
+				size = Integer.parseInt(payloadsize);
 			}
 			catch (Exception e){size = 5;}
 		}
