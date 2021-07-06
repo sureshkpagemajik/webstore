@@ -26,7 +26,7 @@
 		System.out.println("size : "+size);
 
 		if(size > 0){
-			int sizeinmb = size * 1000000;
+			int sizeinmb = size * 1;
 			for(int i=0;i<sizeinmb;i++) {
 				payloadStr = payloadStr +"A";
 			}
