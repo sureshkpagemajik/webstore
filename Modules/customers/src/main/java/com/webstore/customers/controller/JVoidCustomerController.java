@@ -384,9 +384,10 @@ public class JVoidCustomerController {
 	}  
 
 	@RequestMapping(value = "customer/heavypayload", method = RequestMethod.POST)
-	public @ResponseBody String heavyPayloadReceiver() {
+	public @ResponseBody String heavyPayloadReceiver(@RequestBody String body) {
+		System.out.println("Request Body size : "+body.length());
 		System.out.println("received the payload from caller ....");
-		return "{\"response\" : \" recceived-oaky\"}";
+		return "{\"response\" : \" recceived-oaky\",\"requestPayloadSize\" : "+body.length()+"}";
 	}
 	
 }
