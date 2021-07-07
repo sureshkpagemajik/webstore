@@ -51,9 +51,9 @@
 			HttpHeaders headers = new HttpHeaders();
 			headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
-			HttpEntity<String> request = new HttpEntity<String>(obj.toString(), headers);
+			HttpEntity<String> entity = new HttpEntity<String>(obj.toString(), headers);
     
-			String resultJson = restTemplate.postForObject(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD, request, String.class);
+			String resultJson = restTemplate.postForObject(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD, entity, String.class);
 			//UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl()
 					//.queryParam("params", obj);	
 			//HttpEntity<?> entity = new HttpEntity<>(headers);
