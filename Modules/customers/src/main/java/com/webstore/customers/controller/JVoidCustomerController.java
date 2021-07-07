@@ -383,10 +383,10 @@ public class JVoidCustomerController {
 		return "redirect:/jvoid-customer";
 	}  
 
-	@RequestMapping(value = "customer/heavypayload", method = RequestMethod.GET)
+	@RequestMapping(value = "customer/heavypayload", method = RequestMethod.POST)
 	public @ResponseBody String heavyPayloadReceiver() {
 		System.out.println("received the payload from caller ....");
-		return "{\"test\" : \" recceived-oaky\"}";
+		return "{\"response\" : \" recceived-oaky\"}";
 	}
 	
 }
