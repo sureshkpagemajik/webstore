@@ -65,7 +65,7 @@
 			String result = "";
 			JSONObject returnJsonObj = null;
 			try {
-				returnJsonObj = new JSONObject(resultJson.getBody());
+				//returnJsonObj = new JSONObject(resultJson.getBody());
 
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
