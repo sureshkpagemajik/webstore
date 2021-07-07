@@ -53,8 +53,14 @@
 			System.out.println("URL to hit : "+ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD);
 
 			HttpEntity<String> entity = new HttpEntity<String>(obj.toString(), headers);
+
+			UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD);
+					//.queryParam("params", obj);	
+			//HttpEntity<?> entity = new HttpEntity<>(headers);
+			//System.out.println("urlString Url = "+ UriComponentsBuilder.fromHttpUrl(ServerUris.CUSTOMER_SERVER_URI+URIConstants.GET_CUSTOMER_BY_EMAIL).queryParam("params", obj).build().toUri());
+			HttpEntity<String> returnString = restTemplate.exchange(builder.build().toUri(), HttpMethod.POST, entity, String.class);
     
-			String resultJson = restTemplate.postForObject(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD, entity, String.class);
+			//String resultJson = restTemplate.postForObject(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD, entity, String.class);
 			
 			//UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl()
 					//.queryParam("params", obj);	
@@ -63,7 +69,7 @@
 			//HttpEntity<String> returnString = restTemplate.exchange(builder.build().toUri(), HttpMethod.GET, entity, String.class);
 				
 			
-			out.println("------resultJson-------"+resultJson);
+			out.println("------returnString-------"+returnString);
 			String result = "";
 
 			
