@@ -384,7 +384,7 @@ public class JVoidCustomerController {
 	}  
 
 	@RequestMapping(value = "customer/heavypayload", method = RequestMethod.GET)
-	public String heavyPayloadReceiver() {
+	public @ResponseBody String heavyPayloadReceiver() {
 		System.out.println("received the payload from caller ....");
 		return "{\"test\" : \" recceived-oaky\"}";
 	}
