@@ -382,5 +382,11 @@ public class JVoidCustomerController {
 		//this.customerMasterService.addCustomer(customerToBeAdded);
 		return "redirect:/jvoid-customer";
 	}  
+
+	@RequestMapping(value = "customer/heavypayload", method = RequestMethod.POST)
+	public String heavyPayloadReceiver() {
+		System.out.println("received the payload from caller ....");
+		return "received-okay";
+	}
 	
 }

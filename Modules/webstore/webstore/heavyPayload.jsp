@@ -50,18 +50,22 @@
 			RestTemplate restTemplate = new RestTemplate();
 			HttpHeaders headers = new HttpHeaders();
 			headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
-			UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(ServerUris.CUSTOMER_SERVER_URI+URIConstants.GET_CUSTOMER_BY_EMAIL)
-					.queryParam("params", obj);	
-			HttpEntity<?> entity = new HttpEntity<>(headers);
-			System.out.println("urlString Url = "+ UriComponentsBuilder.fromHttpUrl(ServerUris.CUSTOMER_SERVER_URI+URIConstants.GET_CUSTOMER_BY_EMAIL).queryParam("params", obj).build().toUri());
-			HttpEntity<String> returnString = restTemplate.exchange(builder.build().toUri(), HttpMethod.GET, entity, String.class);
+
+			HttpEntity<String> request = new HttpEntity<String>(obj.toString(), headers);
+    
+			String resultJson = restTemplate.postForObject(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD, request, String.class);
+			//UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl()
+					//.queryParam("params", obj);	
+			//HttpEntity<?> entity = new HttpEntity<>(headers);
+			//System.out.println("urlString Url = "+ UriComponentsBuilder.fromHttpUrl(ServerUris.CUSTOMER_SERVER_URI+URIConstants.GET_CUSTOMER_BY_EMAIL).queryParam("params", obj).build().toUri());
+			//HttpEntity<String> returnString = restTemplate.exchange(builder.build().toUri(), HttpMethod.GET, entity, String.class);
 				
 			
-			out.println("------returnString-------"+returnString);
+			out.println("------resultJson-------"+resultJson);
 			String result = "";
 			JSONObject returnJsonObj = null;
 			try {
-				returnJsonObj = new JSONObject(returnString.getBody());
+				returnJsonObj = new JSONObject(resultJson.getBody());
 
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block

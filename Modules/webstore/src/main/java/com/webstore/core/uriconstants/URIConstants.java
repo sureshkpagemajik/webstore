@@ -13,6 +13,7 @@ public class URIConstants {
 	public static final String ADD_ORDER = "/order/addaddress";
 	public static final String ADD_CUSTOMER = "/customer/add";
 	public static final String GET_CUSTOMER_BY_EMAIL = "/customer/getbyemail";
+	public static final String POST_HEAVYPAYLOAD = "/customer/heavypayload";
 	public static final String UPDATE_CUSTOMER = "/customer/update";
 	public static final String RESET_CUSTOMER_PASSWORD = "/customer/resetpassword";
 	public static final String GET_ITEM_CODE = "/quote/getItemCode";
