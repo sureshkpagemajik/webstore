@@ -50,11 +50,12 @@
 			RestTemplate restTemplate = new RestTemplate();
 			HttpHeaders headers = new HttpHeaders();
 			headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+			System.out.println("URL to hit : "+ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD);
 
 			HttpEntity<String> entity = new HttpEntity<String>(obj.toString(), headers);
     
 			String resultJson = restTemplate.postForObject(ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD, entity, String.class);
-			System.out.println("URL to hit : "+ServerUris.CUSTOMER_SERVER_URI+URIConstants.POST_HEAVYPAYLOAD);
+			
 			//UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl()
 					//.queryParam("params", obj);	
 			//HttpEntity<?> entity = new HttpEntity<>(headers);
