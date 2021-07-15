@@ -99,19 +99,9 @@ public class JVoidQuoteController {
 //		String hostIP = (paymentMethod.equalsIgnoreCase("master")) ? "mastercardpaymentgateway" : "visapaymentgateway";
 		String hostIP = "gateway:8080";
 		UriComponentsBuilder builder = null;
-		System.out.println("counter = "+counter);
 				
-		if(counter >= 0 && counter < 5) {
-			builder = UriComponentsBuilder.fromHttpUrl("http://" + hostIP + "/" + ((paymentMethod.equalsIgnoreCase("visa")) ? "visa" : "master"));
-		}
-		else if (counter>=5 && counter<10) {
-			builder = UriComponentsBuilder.fromHttpUrl("http://" + hostIP + "/" + ((paymentMethod.equalsIgnoreCase("visa")) ? "visa" : "mastercard"));
-		}
-		else {
-			counter=0;
-			builder = UriComponentsBuilder.fromHttpUrl("http://" + hostIP + "/" + ((paymentMethod.equalsIgnoreCase("visa")) ? "visa" : "master"));
-		}
-		++counter;
+		builder = UriComponentsBuilder.fromHttpUrl("http://" + hostIP + "/" + ((paymentMethod.equalsIgnoreCase("visa")) ? "visa" : "master"));
+
 		System.out.println("hostIp - "+hostIP);
 		
 		RestTemplate restTemplate = new RestTemplate();
