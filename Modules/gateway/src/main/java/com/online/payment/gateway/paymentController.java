@@ -34,31 +34,31 @@ public class paymentController {
 
 	@RequestMapping("/master")
     public ResponseEntity<?> masterPaymentGateway() {
-    if(counter >= 0 && counter < 5) {
-		try {
-			Thread.sleep(20000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-        return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.OK);
-	} else if (counter>=5 && counter<10) {
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.INTERNAL_SERVER_ERROR);
-    } else {
+		if(counter >= 0 && counter < 5) {
+			++counter;
+			try {
+				Thread.sleep(20000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.OK);
+		} else if (counter>=5 && counter<10) {
+			++counter;
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.INTERNAL_SERVER_ERROR);
+		} 
 		counter = 0;
 		try {
 			Thread.sleep(20000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-        return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.OK);
-    }
-	++counter;
-}
+		return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.OK);
+	}
 	
 	@RequestMapping("/mastercard")
 	@ResponseStatus(code=HttpStatus.INTERNAL_SERVER_ERROR,reason="Could not get a timely response from the payment gateway!")
