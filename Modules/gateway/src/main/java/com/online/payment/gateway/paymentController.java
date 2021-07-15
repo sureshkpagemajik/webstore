@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class paymentController {
 	
-	public static int i = 0;
+	public static int counter = 0;
 
 	@RequestMapping("/visa")
 	public String visaPaymentGateway() {
@@ -19,16 +19,45 @@ public class paymentController {
 		}
 		return "Success ! redirecting...";
 	}
+
+	//@RequestMapping("/master")
+	//public String masterPaymentGateway() {
+	//	try {
+	//		Thread.sleep(20000);
+	//	} catch (InterruptedException e) {
+	//		e.printStackTrace();
+	//	}
+	//	System.out.println("called /master from paymentController - gateway");
+	//	return "Could not get a timely response from the payment gateway!";
+	//}
+
 	@RequestMapping("/master")
-	public String masterPaymentGateway() {
+    public ResponseEntity<?> masterPaymentGateway() {
+    if(counter >= 0 && counter < 5) {
 		try {
 			Thread.sleep(20000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println("called /master from paymentController - gateway");
-		return "Could not get a timely response from the payment gateway!";
-	}
+        return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.OK);
+	} else if (counter>=5 && counter<10) {
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.INTERNAL_SERVER_ERROR);
+    } else {
+		counter = 0;
+		try {
+			Thread.sleep(20000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+        return new ResponseEntity<>("Could not get a timely response from the payment gateway!", HttpStatus.OK);
+    }
+	++counter;
+}
 	
 	@RequestMapping("/mastercard")
 	@ResponseStatus(code=HttpStatus.INTERNAL_SERVER_ERROR,reason="Could not get a timely response from the payment gateway!")
