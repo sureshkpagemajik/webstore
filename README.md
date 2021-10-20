@@ -1,10 +1,10 @@
 
 ## Webstore : Java Based Micro Services ECommerce Application
 
-![Home](https://github.com/eginnovations/webstore-micro-services-app/raw/master/docs/images/webstore-home-page.png)
+![Home](https://github.com/eginnovations/webstore/raw/master/docs/images/webstore-home-page.png)
 
 ## eG Service Topology 
-![topology](https://github.com/eginnovations/webstore-micro-services-app/raw/master/docs/images/webstore-eg-topology.png)
+![topology](https://github.com/eginnovations/webstore/raw/master/docs/images/webstore-eg-topology.png)
 
 ## This application can be executed in following modes
 
@@ -24,13 +24,13 @@
 **Step 1 :** To clone this application
 
 ```
-git clone https://github.com/eginnovations/webstore-micro-services-app
+git clone https://github.com/eginnovations/webstore.git
 ```
 
 **Step 2 :** Navigate to application home directory
 
 ```
-cd webstore-micro-services-app
+cd webstore
 ```
 
 **Step 3 :** To build the application
@@ -41,32 +41,44 @@ mvn clean package
 
 ## Run the application without APM Agent
 
-**Step 1 :** Navigate to application home directory (webstore-micro-services-app) **Step 2 :** To build docker images and run all the application containers
+**Step 1 :** Navigate to application home directory (webstore) 
+
+**Step 2 :** To build docker images and run all the application containers
 ```
 docker-compose up -d --build
 ```
 
-**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
+**Step 3 :** To ensure all containers started and running `docker ps -a` 
+
+**Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 ## Run the application with APM Agent using volume mount (Only Linux)
 
-**Step 1 :** Navigate to directory "webstore-micro-services-app/btm_volume_mount/" **Step 2 :** To build docker images and run all the application containers
+**Step 1 :** Navigate to directory "webstore/btm_volume_mount/" 
+
+**Step 2 :** To build docker images and run all the application containers
 
 ```
 docker-compose up -d --build
 ```
 
-**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
+**Step 3 :** To ensure all containers started and running `docker ps -a` 
+
+**Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 ## Run the application using embedded APM Agent (APM Agent embedded inside container image)
 
-**Step 1 :** Navigate to directory "webstore-micro-services-app/btm_embedded/" **Step 2 :** To build docker images and run all the application containers
+**Step 1 :** Navigate to directory "webstore/btm_embedded/" 
+
+**Step 2 :** To build docker images and run all the application containers
 
 ```
 docker-compose up -d --build
 ```
 
-**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER\_HOST\_IP:8070/webstore"
+**Step 3 :** To ensure all containers started and running `docker ps -a` 
+
+**Step 4 :** Open the browser and access the application using "http://DOCKER\_HOST\_IP:8070/webstore"
 
 ## To stop the application
 
