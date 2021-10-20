@@ -3,6 +3,9 @@
 
 ![Home](https://github.com/eginnovations/webstore-micro-services-app/raw/master/docs/images/webstore-home-page.png)
 
+## eG Service Topology 
+![topology](https://github.com/eginnovations/webstore-micro-services-app/raw/master/docs/images/webstore-eg-topology.png)
+
 ## This application can be executed in following modes
 
 1.  Run the application without APM Agent attached to it
