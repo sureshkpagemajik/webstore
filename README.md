@@ -46,17 +46,17 @@ mvn clean package
 docker-compose up -d --build
 ```
 
-**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER\_HOST\_IP:8070/webstore"
+**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 ## Run the application with APM Agent using volume mount (Only Linux)
 
-**Step 1 :** Navigate to directory "webstore-micro-services-app/btm\_volume\_mount/" **Step 2 :** To build docker images and run all the application containers
+**Step 1 :** Navigate to directory "webstore-micro-services-app/btm_volume_mount/" **Step 2 :** To build docker images and run all the application containers
 
 ```
 docker-compose up -d --build
 ```
 
-**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER\_HOST\_IP:8070/webstore"
+**Step 3 :** To ensure all containers started and running `docker ps -a` **Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 ## Run the application using embedded APM Agent (APM Agent embedded inside container image)
 
