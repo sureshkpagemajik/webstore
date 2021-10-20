@@ -78,7 +78,7 @@ docker-compose up -d --build
 
 **Step 3 :** To ensure all containers started and running `docker ps -a` 
 
-**Step 4 :** Open the browser and access the application using "http://DOCKER\_HOST\_IP:8070/webstore"
+**Step 4 :** Open the browser and access the application using "http://DOCKER_HOST_IP:8070/webstore"
 
 ## To stop the application
 
