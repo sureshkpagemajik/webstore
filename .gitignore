@@ -1,10 +1,9 @@
-
 *.class
 *.class
-webstore\target
-gateway\target
-order\target
-payment\target
-quote\target
-products\target
-customers\target
+webstore/target
+gateway/target
+order/target
+payment/target
+quote/target
+products/target
+customers/target
