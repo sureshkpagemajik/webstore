@@ -1,0 +1,5 @@
+20-Oct-2021
+On top of egapm/new-webstore:webstore-h:
+- New header given to hicpu.jsp
+- New getCouponId.jsp added to simulate sql error query on SQL performance report
+
