@@ -14,10 +14,10 @@
 </ul>
 <h2>Compile and Build Application</h2> 
 <b><u>Step 1 :</u></b> To clone this application
-<pre><code>git clone https://github.com/javaapm/MicroSvcApp.git
+<pre><code>git clone https://github.com/eginnovations/webstore-micro-services-app
 </code></pre>
 <b><u>Step 2 :</u></b> Navigate to application home directory 
-<pre><code>cd MicroSvcApp
+<pre><code>cd webstore-micro-services-app
 </code></pre>
 <b><u>Step 3 :</u></b> To build the application 
 <pre><code>mvn clean package
@@ -25,7 +25,7 @@
 
 <h2>Run the application without APM Agent </h2>
 
-<b><u>Step 1 :</u></b> Navigate to application home directory (MicroSvcApp)
+<b><u>Step 1 :</u></b> Navigate to application home directory (webstore-micro-services-app)
 
 <b><u>Step 2 :</u></b> To build docker images and run all the application containers
 
@@ -38,7 +38,7 @@
 
 <h2>Run the application with APM Agent using volume mount (Only Linux)</h2>
 
-<b><u>Step 1 :</u></b> Navigate to directory "MicroSvcApp/btm_volume_mount/"
+<b><u>Step 1 :</u></b> Navigate to directory "webstore-micro-services-app/btm_volume_mount/"
 
 <b><u>Step 2 :</u></b> To build docker images and run all the application containers
 
@@ -51,7 +51,7 @@
 
 <h2>Run the application using embedded APM Agent (APM Agent embedded inside container image)</h2>
 
-<b><u>Step 1 :</u></b> Navigate to directory "MicroSvcApp/btm_embedded/"
+<b><u>Step 1 :</u></b> Navigate to directory "webstore-micro-services-app/btm_embedded/"
 
 <b><u>Step 2 :</u></b> To build docker images and run all the application containers
 
