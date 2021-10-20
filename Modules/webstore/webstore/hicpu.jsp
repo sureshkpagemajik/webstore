@@ -136,6 +136,11 @@ input[type=radio], input[type=checkbox] {
   margin: auto;
 }
 
+.form-heading {
+    margin-top: 120px;
+    margin-left: 300px;
+}
+
 .form-label-group {
   position: relative;
   margin-bottom: 1rem;
@@ -230,12 +235,12 @@ input[type=radio], input[type=checkbox] {
 			
 	
 <div>
-<form class="form-signin">
-  <div class="text-left mb-4">
+  <div class="form-heading">
    
-    <h3 class="h3 mb-3 font-weight-normal">Generate High CPU In Frontend Micro-service [CustomActionController]</h3>
+    <h1 class="h3 mb-3 font-weight-normal">Generate High CPU in Frontend microservice (CustomActionController.java)</h1>
     <p>Enter Number of Seconds for Continuous Looping</p>
   </div>
+<form class="form-signin">
 
   <div class="form-label-group">
     <input  id="loopSec" name="loopSec" class="form-control" type="number" placeholder="Seconds" required autofocus>
