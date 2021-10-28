@@ -128,7 +128,7 @@ public class PaymentGatewayController extends HttpServlet {
 			System.out.println("domainPath : "+domainPath);
 
 			UriComponentsBuilder builder = UriComponentsBuilder
-					.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
+					.fromHttpUrl(domainPath  + "/payment/" + URIConstants.MAKE_PAYMENT)
 					.queryParam("params", jsonParams);
 			HttpEntity<?> entity = new HttpEntity<>(headers);
 			HttpEntity<String> returnString = null;
