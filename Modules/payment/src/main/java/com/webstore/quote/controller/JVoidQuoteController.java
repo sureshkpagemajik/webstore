@@ -138,7 +138,7 @@ public class JVoidQuoteController {
 		    }
 		}
 		
-		} catch (JSONException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return returnString.getBody();
