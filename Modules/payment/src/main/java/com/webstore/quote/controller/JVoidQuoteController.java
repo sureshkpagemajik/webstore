@@ -89,11 +89,24 @@ public class JVoidQuoteController {
 	}
 
 	@RequestMapping(value = "payment/makepayment", method = RequestMethod.GET)
-	public @ResponseBody String payment(@RequestParam(required = false, value = "callback") String callback, @RequestParam(required = false, value = "params") JSONObject jsonParams, HttpServletResponse response) {
+	public @ResponseBody String payment(@RequestParam(required = false, value = "callback") String callback, @RequestParam(required = false, value = "jsonParams") JSONObject jsonParams, HttpServletRequest request, HttpServletResponse response) {
+		
+		System.out.println("REquest received");
+		String myParams = request.getParameter("gateway");
+		System.out.println("Params : "+myParams);
+		
 		String paymentMethod = "";
 		HttpEntity<String> returnString = null;
 		try {
-			paymentMethod = jsonParams.getString("gateway");
+			if(jsonParams == null && myParams != null){
+				paymentMethod = myParams;
+			}
+			try {
+				paymentMethod = jsonParams.getString("gateway");
+			}
+			catch(Exception eeee){
+				paymentMethod = "visa";
+			}
 		
 		System.out.println("payment Method - "+paymentMethod);
 //		String hostIP = (paymentMethod.equalsIgnoreCase("master")) ? "mastercardpaymentgateway" : "visapaymentgateway";
