@@ -110,8 +110,8 @@ public class JVoidQuoteController {
 			}
 		
 		System.out.println("payment Method - "+paymentMethod);
-//		String hostIP = (paymentMethod.equalsIgnoreCase("master")) ? "mastercardpaymentgateway" : "visapaymentgateway";
-		String hostIP = "gateway:8080";
+		String hostIP = (paymentMethod.equalsIgnoreCase("master")) ? "mastercardpaymentgateway" : "visapaymentgateway";
+		//String hostIP = "gateway:8080";
 		UriComponentsBuilder builder = null;
 				
 		builder = UriComponentsBuilder.fromHttpUrl("http://" + hostIP + "/" + ((paymentMethod.equalsIgnoreCase("visa")) ? "visa" : "master"));
