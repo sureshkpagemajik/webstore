@@ -141,7 +141,16 @@ public class JVoidQuoteController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return returnString.getBody();
+		String rStr  = "Success ! redirecting...";
+		
+		if(paymentMethod.equals("visa")){
+			rStr  = "Success ! redirecting...";
+		}
+		else 
+			rStr  = "Could not get a timely response from the payment gateway!";
+					
+		return rStr;	
+		//return returnString.getBody();
 	}
 
 	@RequestMapping(value = "quote/add", method = RequestMethod.GET)
