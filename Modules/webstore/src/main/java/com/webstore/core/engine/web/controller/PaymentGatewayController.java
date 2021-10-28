@@ -121,6 +121,11 @@ public class PaymentGatewayController extends HttpServlet {
 			}
 
 			//request.getSession(false).removeAttribute("amount");
+			
+			String domainPath = System.getenv("Payment_URI");
+			if(domainPath == null || domainPath.length() <= 0)			
+				domainPath = ServerUris.PAYMENT_SERVER_URI ;
+			System.out.println("domainPath : "+domainPath);
 
 			UriComponentsBuilder builder = UriComponentsBuilder
 					.fromHttpUrl(ServerUris.PAYMENT_SERVER_URI + "/payment/" + URIConstants.MAKE_PAYMENT)
