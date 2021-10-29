@@ -90,7 +90,7 @@ public class JVoidQuoteController {
 	}
 
 	@RequestMapping(value = "payment/makepayment", method = RequestMethod.GET)
-	public @ResponseBody String payment(@RequestParam(required = false, value = "callback") String callback, @RequestParam(required = false, value = "jsonParams") JSONObject jsonParams, HttpServletRequest request, HttpServletResponse response) {
+	public @ResponseBody String payment(@RequestParam(required = false, value = "callback") String callback, @RequestParam(required = false, value = "params") JSONObject jsonParams, HttpServletRequest request, HttpServletResponse response) {
 		
 		System.out.println("REquest received");
 		String myParams = request.getParameter("params");
